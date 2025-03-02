@@ -1,7 +1,10 @@
 # findImagePosition
 
 ## 在大图中查找小图的左上角坐标
-
+##
+```
+go get github.com/topascend/findImagePosition
+```
 ##
 #### FindPosition 
 - 返回小图在大图中的位置，若未找到返回false

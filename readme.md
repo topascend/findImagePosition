@@ -1,6 +1,10 @@
 # findImagePosition
 ## Search for the top left corner coordinates of the small image in the large image
 ##
+```
+go get github.com/topascend/findImagePosition
+```
+##
 #### FindPosition 
 - returns the position of the small image in the large image, and returns false if not found
 ####  FindAnyPosition 
