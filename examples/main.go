@@ -17,7 +17,7 @@ func main() {
 		path = fmt.Sprintf("examples\\small%d.png", i%5)
 		begin := time.Now()
 		findImage("examples\\big.png", path)
-		fmt.Printf("图片: %v 总共用时: %v \n\n", path, time.Since(begin).String())
+		fmt.Printf("图片: %v 总共time: : %v \n\n", path, time.Since(begin).String())
 	}
 
 }
@@ -35,7 +35,6 @@ func findImage(bigPath, smallPath string) {
 	}
 
 	// 打开小图
-	//smallFile, err := os.Open("small3.png")
 	smallFile, err := os.Open(smallPath)
 	if err != nil {
 		panic(err)
@@ -48,7 +47,7 @@ func findImage(bigPath, smallPath string) {
 
 	begin := time.Now()
 	pos, found := fip.FindPosition(bigImg, smallImg)
-	fmt.Printf("findPosition 用时 %v \n", time.Since(begin).String())
+	fmt.Printf("findPosition time:  %v \n", time.Since(begin).String())
 	if found {
 		fmt.Println("Found at:", pos.X, pos.Y)
 	} else {
@@ -57,7 +56,7 @@ func findImage(bigPath, smallPath string) {
 
 	begin = time.Now()
 	pos, found = fip.FindAnyPosition(bigImg, smallImg)
-	fmt.Printf("findAnyPosition 用时 %v \n", time.Since(begin).String())
+	fmt.Printf("findAnyPosition time:  %v \n", time.Since(begin).String())
 	if found {
 		fmt.Println("Found at:", pos.X, pos.Y)
 	} else {
@@ -66,7 +65,7 @@ func findImage(bigPath, smallPath string) {
 
 	begin = time.Now()
 	pos2, found := fip.FindAllPositions(bigImg, smallImg)
-	fmt.Printf("findAllPositions 用时 %v \n", time.Since(begin).String())
+	fmt.Printf("findAllPositions time:  %v \n", time.Since(begin).String())
 	fmt.Printf("%+v\n", pos2)
 	if found {
 		fmt.Println("Found at:", pos2)
