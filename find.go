@@ -23,7 +23,7 @@ func FindPosition(bigImg, smallImg image.Image) (image.Point, bool) {
 	wSmall, hSmall := rgbaSmall.Bounds().Dx(), rgbaSmall.Bounds().Dy()
 
 	if wSmall > wBig || hSmall > hBig {
-		return image.Point{}, false
+		return image.Point{X: -1, Y: -1}, false
 	}
 
 	// 小图每行的字节数
@@ -57,7 +57,7 @@ func FindPosition(bigImg, smallImg image.Image) (image.Point, bool) {
 		}
 	}
 
-	return image.Point{}, false
+	return image.Point{X: -1, Y: -1}, false
 }
 
 // FindAnyPosition 单匹配版本,找到任意一个位置就停止查找，若未找到返回false
@@ -69,7 +69,7 @@ func FindAnyPosition(bigImg, smallImg image.Image) (image.Point, bool) {
 	wSmall, hSmall := rgbaSmall.Bounds().Dx(), rgbaSmall.Bounds().Dy()
 
 	if wSmall > wBig || hSmall > hBig {
-		return image.Point{}, false
+		return image.Point{X: -1, Y: -1}, false
 	}
 
 	// 预计算小图四个角的uint32值
@@ -82,7 +82,7 @@ func FindAnyPosition(bigImg, smallImg image.Image) (image.Point, bool) {
 	resultChan := make(chan image.Point, 1)
 	maxY := hBig - hSmall
 	if maxY < 0 {
-		return image.Point{}, false
+		return image.Point{X: -1, Y: -1}, false
 	}
 
 	//numGoroutines := runtime.NumCPU()
@@ -131,7 +131,7 @@ func FindAnyPosition(bigImg, smallImg image.Image) (image.Point, bool) {
 	if pt, ok := <-resultChan; ok {
 		return pt, true
 	}
-	return image.Point{}, false
+	return image.Point{X: -1, Y: -1}, false
 }
 
 // FindAllPositions 返回所有匹配位置，若未找到返回false
