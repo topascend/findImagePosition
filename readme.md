@@ -12,6 +12,7 @@ go get github.com/topascend/findImagePosition
 #### FindAllPositions 
 - returns all matching positions, false if not found
 ### Testing
+
 ```
 FindPosition takes 10.4379ms
 Found at: 1680 37
