@@ -15,13 +15,26 @@ go get github.com/topascend/findImagePosition
 
 ### 测试
 
+![大图](./examples/big.png)
+![小图](./examples/small0.png)
+![小图](./examples/small4.png)
 ```
-findPosition 用时 10.4379ms
+findPosition taked time:  10.2394ms
+Found at: 8 10
+findAnyPosition taked time:  10.0666ms
+Found at: 8 10
+findAllPositions taked time:  15.9491ms
+[(8,10)]
+Found at: [(8,10)]
+picture: examples\small0.png taked total time: : 54.7038ms
+
+
+findPosition taked time:  7.0034ms
 Found at: 1680 37
-findAnyPosition 用时 9.2486ms
+findAnyPosition taked time:  6.982ms
 Found at: 1680 37
-findAllPositions 用时 9.7378ms
+findAllPositions taked time:  7.975ms
 [(1680,37) (1682,141) (1684,253) (1684,367) (1686,843)]
 Found at: [(1680,37) (1682,141) (1684,253) (1684,367) (1686,843)]
-图片: examples\small4.png 总共用时: 49.8152ms 
+picture: examples\small4.png taked total time: : 36.5171ms  
 ```
