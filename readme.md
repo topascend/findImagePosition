@@ -1,4 +1,4 @@
-# findImagePosition  [中文文档](https://github.com/topascend/findImagePosition/readme_zh.md)
+# findImagePosition  [中文文档](https://github.com/topascend/findImagePosition/blob/main/readme_zh.md)
 ## Search for the top left corner coordinates of the small image in the large image
 ##
 ```
